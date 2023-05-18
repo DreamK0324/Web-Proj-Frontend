@@ -1,2 +1,2 @@
-# Web-Project
-Web project for CS39548
+# Web-Project-Frontend
+Web project fronted for CS39548
