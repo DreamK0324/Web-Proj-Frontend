@@ -20,6 +20,10 @@ const AllEmployeesView = (props) => {
         );
 
       })}
+      <Link to={`/`}>
+        <button>Go Home</button>
+      </Link>
+
     </div>
   );
 };
