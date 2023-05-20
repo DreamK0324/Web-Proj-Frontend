@@ -1,2 +1,3 @@
-# Web-Project-Frontend
-Web project frontend for CS39548
+# final-frontend
+
+starter code for CSCI 39548 final project
