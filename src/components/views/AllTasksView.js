@@ -18,11 +18,17 @@ const AllTasksView = (props) => {
     <div>
       {tasks.map((task) => {
         let description = task.description;
+        let priority = task.priority;
+        let isComplete = task.isComplete;
         return (
           <div key={task.id}>
           <Link to={`/task/${task.id}`}>
             <h1>{description}</h1>
           </Link>
+          <p>{`Priority: ${priority}`}</p>
+          <p>{isComplete ? "Complete" : "Incomplete"}</p>
+
+
           <button onClick={() => deleteTask(task.id)}>Delete</button>
           </div>
         );
@@ -31,6 +37,11 @@ const AllTasksView = (props) => {
       <Link to={`/newtask`}>
         <button>Add New Task</button>
       </Link>
+      <br></br>
+      <Link to={`/`}>
+        <button>go home</button>
+      </Link>
+      
     </div>
   );
 };
