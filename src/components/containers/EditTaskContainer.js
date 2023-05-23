@@ -42,9 +42,8 @@ class EditTaskContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          description: "", 
-          priority: "",
-          isComplete: false,
+          title: "", 
+          timeslot: "",
           employeeId: null, 
           redirect: false, 
           redirectId: null,
@@ -57,9 +56,8 @@ class EditTaskContainer extends Component {
         this.props.fetchTask(this.props.match.params.id);
         this.props.fetchEmployees();
         this.setState({
-            description: this.props.task.description, 
-            priority: this.props.task.priority,
-            isComplete: this.props.task.isComplete,
+            title: this.props.task.title, 
+            timeslot: this.props.task.timeslot,
             employeeId: this.props.task.employeeId, 
         });
       }
@@ -94,9 +92,8 @@ class EditTaskContainer extends Component {
         //get new info for task from form input
         let task = {
             id: this.props.task.id,
-            description: this.state.description,
-            priority: this.state.priority,
-            isComplete: this.state.isComplete,
+            title: this.state.title,
+            timeslot: this.state.timeslot,
             employeeId: this.state.employeeId
         };
         
@@ -129,15 +126,11 @@ class EditTaskContainer extends Component {
         <div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-            <input type="text" name="description" value={this.state.description || ''} placeholder={task.description} onChange ={(e) => this.handleChange(e)}/>
+            <input type="text" name="title" value={this.state.title || ''} placeholder={task.title} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority: </label>
-            <input type="text" name="priority" value={this.state.priority || ''} placeholder={task.priority} onChange={(e) => this.handleChange(e)}/>
-            <br/>
-
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Complete Status: </label>
-            <input type="checkbox" name="isComplete" value={this.state.isComplete || ''} placeholder={task.isComplete} onChange={(e) => this.handleChange(e)}/>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
+            <input type="text" name="timeslot" value={this.state.timeslot || ''} placeholder={task.timeslot} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <select onChange={(e) => this.handleSelectChange(e)}>
@@ -168,7 +161,7 @@ class EditTaskContainer extends Component {
             : <div> No employee currently assigned </div>
           }
 
-          <div> Other employees: 
+          <div> Other employees
           {otherEmployees.map(employee => {
             return (
             <div key={employee.id}>
