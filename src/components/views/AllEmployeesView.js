@@ -15,11 +15,16 @@ const AllEmployeesView = (props) => {
           <Link to={`/employee/${employee.id}`}>
             <h1>{name}</h1>
           </Link>
-          <p>{employee.department}</p>
+          <p>ID: {employee.id}</p>
+          <p>Department: {employee.department}</p>
         </div>
         );
 
       })}
+      <Link to={`/`}>
+        <button>Go Home</button>
+      </Link>
+
     </div>
   );
 };

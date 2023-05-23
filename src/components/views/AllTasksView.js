@@ -25,8 +25,9 @@ const AllTasksView = (props) => {
           <Link to={`/task/${task.id}`}>
             <h1>{description}</h1>
           </Link>
-          <p>{`Priority: ${priority}`}</p>
-          <p>{isComplete ? "Complete" : "Incomplete"}</p>
+          <p>Priority: {priority}</p>
+          <p>Status: {isComplete ? "Complete" : "Incomplete"}</p>
+
 
 
           <button onClick={() => deleteTask(task.id)}>Delete</button>
