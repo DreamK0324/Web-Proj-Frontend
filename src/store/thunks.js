@@ -2,7 +2,9 @@ import * as ac from './actions/actionCreators';
 const axios = require('axios');
 
 //PATH (should be where your server is running)
-let path = "http://localhost:5001/api";
+//let path = "http://localhost:5001/api";
+//let path = "https://node-crud88.herokuapp.com";
+let path = "https://heavenbase.herokuapp.com";
 
 
 // THUNKS
@@ -29,6 +31,46 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
   try {
     let res = await axios.get(`${path}/employees/${id}`);
     dispatch(ac.fetchEmployee(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+//Add Employee
+export const addEmployeeThunk = (employeeId) => async (dispatch) => {
+  // thunk creator would not an be async function 
+  // if using Promise.then:
+  // return axios
+  //   .get(`${path}/api/instructors/${id}`)
+  //   .then((res) => res.data)
+  //   .then((instructor) => dispatch(ac.fetchInstructor(instructor)))
+  //   .catch((err) => console.log(err));
+  try {
+    let res = await axios.post(`${path}/employees/${employeeId}`);
+    dispatch(ac.addEmployee(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+// Delete Employee
+export const deleteEmployeeThunk = employeeId => async dispatch => {
+  try {
+    await axios.delete(`${path}/employees/${employeeId}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteEmployee(employeeId));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+// Edit Employee
+export const editEmployeeThunk = employee => async dispatch => {
+  try {
+    let res = await axios.put(`${path}/employees/${employee.id}`, employee);
+    //res.data is the updated course object
+    dispatch(ac.editEmployee(res.data));
   } catch(err) {
     console.error(err);
   }
