@@ -173,19 +173,6 @@ class EditEmployeeContainer extends Component {
       });
     }
 
-    // handleSelectChange = event => {
-    //   //handle change for the dropdown menu
-    //   //want to set the instructorId based on the selected choice
-    //   //when the form gets submitted, this is how we can change
-    //   //assigned instructor without having to manually enter in the 
-    //   //instructorId like before
-    //   if (event.target.value === "assignment") {
-    //     this.setState({taskId:null});
-    //   } else {
-    //     this.setState({taskId: event.target.value})
-    //   }
-    // }
-
     handleSubmit = event => {
         event.preventDefault();
         //implementing form validation
@@ -244,47 +231,12 @@ class EditEmployeeContainer extends Component {
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
             <input type="text" name="department" value={this.state.department || ''} placeholder={employee.department} onChange={(e) => this.handleChange(e)}/>
             <br/>
-
-            {/* <select onChange={(e) => this.handleSelectChange(e)}>
-              {employee.task!==null ?
-                <option value={employee.taskId}>{employee.task.description+" (current)"}</option>
-              : <option value="assignment">Assignment</option>
-              }
-              {otherTasks.map(task => {
-                return (
-                  <option value={task.id} key={task.id}>{task.description}</option>
-                )
-              })}
-              {employee.task!==null && <option value="Assignment">Assignment</option>}
-            </select> */}
   
             <button type="submit">
               Submit
             </button>
 
           </form>
-          {/* { this.state.error !=="" && <p>{this.state.error}</p> }
-
-          {employee.taskId !== null ?
-            <div> Current task:  
-            <Link to={`/task/${employee.taskId}`}>{employee.task.description}</Link>
-            <button onClick={async () => {await editEmployee({id:employee.id, taskId: null});  fetchEmployee(employee.id)}}>Unassigned work</button>
-            </div>
-            : <div> No task currently assigned </div>
-          }
-
-          <div> Other task:
-          {otherTasks.map(task => {
-            return (
-            <div key={task.id}>
-                <Link to={`/task/${task.id}`}>
-                  <h4>{task.description}</h4>
-                </Link>
-                <button onClick={async() => {await editEmployee({id:employee.id, taskId: task.id}); fetchEmployee(employee.id)}}>Assign this task</button>
-            </div>
-            )})
-          }
-          </div> */}
 
           <br/>
           <br/>

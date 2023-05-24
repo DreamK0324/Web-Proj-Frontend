@@ -83,7 +83,7 @@ const NewTaskContainer = ({ addTask }) => {
   const [description, setDescription] = useState('');
   const [priority_level, setPriority] = useState(null);
   const [completion_status, setIsComplete] = useState(false);
-  const [employeeId, setEmployeeId] = useState(null);
+  const [assigned_to, setEmployeeId] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const [redirectId, setRedirectId] = useState(null);
   const [error, setError] = useState('');
@@ -113,7 +113,8 @@ const NewTaskContainer = ({ addTask }) => {
       description,
       priority_level,
       completion_status,
-      employeeId,
+      //employeeId,
+      assigned_to,
     };
 
     const newTask = await addTask(task);
