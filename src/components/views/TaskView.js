@@ -16,11 +16,15 @@ const TaskView = (props) => {
       <div>
         completion_status : {task.completion_status ? 'Complete' : 'Incomplete'}
       </div>
+      <br/>
       <Link to={`/edittask/${task.id}`}>Edit task information</Link>
+      <br/>
       <br/>
       <Link to={`/tasks`}>View all tasks</Link>
       <br/>
+      <br/>
       <Link to={`/tasks`}>Previous Page</Link>
+      <br/>
       <br/>
       <Link to="/">Home Page</Link>
     </div>
