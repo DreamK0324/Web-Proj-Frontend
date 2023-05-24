@@ -38,9 +38,9 @@ const NewEmployeeContainer = ({ addEmployee }) => {
   
 
     const employee = {
-      employee_first_name : this.state.employee_first_name,
-      employee_last_name : this.state.employee_last_name,
-      department_name : this.state.department_name
+      employee_first_name,
+      employee_last_name,
+      department_name,
     };
 
     const newEmployee = await addEmployee(employee);
@@ -51,7 +51,7 @@ const NewEmployeeContainer = ({ addEmployee }) => {
   };
 
   if (redirect) {
-    return <Redirect to={"/employees"} />;
+    return <Redirect to={`/employee/${redirectId}`} />;
   }
 
   return (

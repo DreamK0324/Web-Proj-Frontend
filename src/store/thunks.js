@@ -37,7 +37,7 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
 };
 
 //Add Employee
-export const addEmployeeThunk = (employeeId) => async (dispatch) => {
+export const addEmployeeThunk = (employee) => async (dispatch) => {
   // thunk creator would not an be async function 
   // if using Promise.then:
   // return axios
@@ -46,7 +46,8 @@ export const addEmployeeThunk = (employeeId) => async (dispatch) => {
   //   .then((instructor) => dispatch(ac.fetchInstructor(instructor)))
   //   .catch((err) => console.log(err));
   try {
-    let res = await axios.post(`${path}/employees/${employeeId}`);
+    //let res = await axios.post(`${path}/employees/${employeeId}`);
+    let res = await axios.post(`${path}/employees`, employee);
     dispatch(ac.addEmployee(res.data));
     return res.data;
   } catch(err) {

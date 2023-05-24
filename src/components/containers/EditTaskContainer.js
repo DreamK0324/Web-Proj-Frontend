@@ -115,12 +115,12 @@ class EditTaskContainer extends Component {
 
             <select onChange={(e) => this.handleSelectChange(e)}>
               {task.employee!==null ?
-                thisEmployee.map(employee => (<option value={task.assigned_to}>{employee.employee_first_name+" (current)"}</option>))
+                thisEmployee.map(employee => (<option value={task.assigned_to}>{employee.employee_first_name}{" "}{employee.employee_last_name + " (current)"}</option>))
               : <option value="staff">Employee</option>
               }
               {otherEmployees.map(employee => {
                 return (
-                  <option value={employee.id} key={employee.id}>{employee.employee_first_name}</option>
+                  <option value={employee.id} key={employee.id}>{employee.employee_first_name}{" "}{employee.employee_last_name}</option>
                 )
               })}
               {task.employee!==null && <option value="staff">Staff</option>}
@@ -149,7 +149,7 @@ class EditTaskContainer extends Component {
              : <div> No employee currently assigned </div> */}
             
             {thisEmployee.map(employee => (
-              <Link to={`/employees/${task.assigned_to}`}>{employee.employee_first_name}</Link>
+              <Link to={`/employee/${task.assigned_to}`}>{employee.employee_first_name}{employee.employee_last_name}</Link>
               
 
             ))}
@@ -162,7 +162,7 @@ class EditTaskContainer extends Component {
             return (
             <div key={employee.id}>
                 <Link to={`/employee/${employee.id}`}>
-                  <h4>{employee.employee_first_name}</h4>
+                  <h4>{employee.employee_first_name}{" "}{employee.employee_last_name}</h4>
                 </Link>
                 <button onClick={async() => {await editTask({id:task.id, assigned_to: employee.id}); fetchTask(task.id)}}>Assign this employee</button>
             </div>
