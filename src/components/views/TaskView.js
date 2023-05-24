@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 const TaskView = (props) => {
   const { task } = props;
@@ -14,4 +16,4 @@ const TaskView = (props) => {
 
 };
 
-export default TaskView;
+export default TaskView;gi
