@@ -1,37 +1,37 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllEmployeesThunk } from "../../store/thunks";
+import React, { useEffect } from "react";
+//import { useDispatch, useSelector } from "react-redux";
+import { fetchAllEmployeesThunk, deleteEmployeeThunk } from "../../store/thunks";
 import { AllEmployeesView } from "../views";
+import { connect } from 'react-redux';
 
-function AllEmployeesContainer() {
-  const allEmployees = useSelector((state) => state.allEmployees);
-  const dispatch = useDispatch();
-
-  //replaces componentDidMount
+const AllEmployeesContainer = ({ fetchAllEmployees, allEmployees, deleteEmployee }) => {
   useEffect(() => {
-    dispatch(fetchAllEmployeesThunk());
-  }, [dispatch]);
+    fetchAllEmployees()
+  }, [fetchAllEmployees]);
 
-  return <AllEmployeesView allEmployees={allEmployees} />;
-}
+  return (
+    <div>
+      <AllEmployeesView
+        employees={allEmployees}
+        deleteEmployee={deleteEmployee}
+      />
+    </div>
+  );
+};
 
-export default AllEmployeesContainer;
+// Map state to props;
+const mapState = (state) => {
+  return {
+    allEmployees: state.allEmployees,
+  };
+};
 
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchAllEmployeesThunk } from "../../store/thunks";
-// import { AllEmployeesView } from "../views";
+// Map dispatch to props;
+const mapDispatch = (dispatch) => {
+  return {
+    fetchAllEmployees: () => dispatch(fetchAllEmployeesThunk()),
+    deleteEmployee: (employeeId) => dispatch(deleteEmployeeThunk(employeeId)),
+  };
+};
 
-// function AllEmployeesContainer() {
-//   const allEmployees = useSelector((state) => state.allEmployees);
-//   const dispatch = useDispatch();
-
-//   //replaces componentDidMount
-//   useEffect(() => {
-//     dispatch(fetchAllEmployeesThunk());
-//   }, [dispatch]);
-
-//   return <AllEmployeesView allEmployees={allEmployees} />;
-// }
-
-// export default AllEmployeesContainer;
+export default connect(mapState, mapDispatch)(AllEmployeesContainer);

@@ -134,22 +134,14 @@ class EditTaskContainer extends Component {
           { this.state.error !=="" && <p>{this.state.error}</p> }
 
           {task.assigned_to !== null ?
-            <div> Current employee:  
-            {/* {thisEmployee.map(employee => (
-              <Link to={`/employees/${task.assigned_to}`}>{employee.employee_first_name}</Link>
-              <button onClick={async () => {
-                await editTask({id: task.id, assigned_to: null});
-                fetchTask(task.id);
-              }}>Unassign</button>
-
-            )} */}
-            {/* <Link to={`/employee/${task.assigned_to}`}>{employee.employee_first_name}</Link>
-            <button onClick={async () => {await editTask({id:task.id, assigned_to: null});  fetchTask(task.id)}}>Unassign</button>
-            </div>
-             : <div> No employee currently assigned </div> */}
-            
+            <div> Current employee: 
             {thisEmployee.map(employee => (
-              <Link to={`/employee/${task.assigned_to}`}>{employee.employee_first_name}{employee.employee_last_name}</Link>
+              <Link to={`/employee/${task.assigned_to}`}>{employee.employee_first_name}{" "}{employee.employee_last_name}</Link>,
+              <button onClick={async () => {await editTask({ id: task.id, assigned_to: null }); fetchTask(task.id);
+          }}
+        >
+          Unassign
+        </button>
               
 
             ))}
