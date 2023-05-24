@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const NewEmployeeView = (props) => {
@@ -23,11 +23,6 @@ const NewEmployeeView = (props) => {
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>TaskId: </label>
-          <input type="number" name="taskId" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
           <input type="text" name="department" onChange={(e) => handleChange(e)} />
           <br/>
@@ -36,6 +31,13 @@ const NewEmployeeView = (props) => {
           <button type="submit">
             Submit
           </button>
+          <br/>
+          <br/>
+          <Link to="/employees">Previous Page</Link>
+          <br/>
+          <br/>
+          <Link to="/">Home page</Link>
+          
           <br/>
           <br/>
         </form>

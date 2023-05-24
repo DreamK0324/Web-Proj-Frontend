@@ -9,6 +9,8 @@ const HomePageView = () => {
         Welcome to the HomePage
       </h1>
       <p>Group Member: Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang</p>
+      <br/>
+      <br/>
       <div style={{ marginBottom: '10px' }}>
         <Link to="/employees">All Employees</Link>
       </div>

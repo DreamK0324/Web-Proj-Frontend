@@ -9,7 +9,6 @@ const NewEmployeeContainer = ({ addEmployee }) => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [department, setDepartment] = useState('');
-  const [taskId, setTaskId] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const [redirectId, setRedirectId] = useState(null);
   const [error, setError] = useState('');
@@ -22,8 +21,6 @@ const NewEmployeeContainer = ({ addEmployee }) => {
       setLastname(value);
     } else if (name === 'department') {
       setDepartment(value);
-    } else if (name === 'taskId') {
-      setTaskId(value);
     }
   };
 
@@ -33,13 +30,17 @@ const NewEmployeeContainer = ({ addEmployee }) => {
       setError('First and Last name field are required');
       return;
     }
+    
+    if(department === '') {
+      setError('Department field are required');
+      return;
+    }
   
 
     const employee = {
       firstname,
       lastname,
       department,
-      taskId,
     };
 
     const newEmployee = await addEmployee(employee);

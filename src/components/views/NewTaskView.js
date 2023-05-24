@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const NewTaskView = (props) => {
@@ -19,7 +19,7 @@ const NewTaskView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority: </label>
-          <input type="text" name="priority" onChange={(e) => handleChange(e)} />
+          <input type="number" name="priority_level" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
@@ -29,13 +29,22 @@ const NewTaskView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>IsComplete: </label>
-          <input type="checkbox" name="isComplete" onChange={(e) => handleChange(e)} />
+          <input type="checkbox" name="completion_status" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
           <button type="submit">
             Submit
           </button>
+          <br/>
+          <br/>
+          <Link to="/tasks">Previous Page</Link>
+          <br/>
+          <br/>
+          <Link to="/">
+            Home Page
+          </Link>
+          
           <br/>
           <br/>
         </form>

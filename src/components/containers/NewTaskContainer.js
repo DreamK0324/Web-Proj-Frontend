@@ -7,8 +7,8 @@ import { addTaskThunk } from '../../store/thunks';
 
 const NewTaskContainer = ({ addTask }) => {
   const [description, setDescription] = useState('');
-  const [priority, setPriority] = useState('');
-  const [isComplete, setIsComplete] = useState(false);
+  const [priority_level, setPriority] = useState(null);
+  const [completion_status, setIsComplete] = useState(false);
   const [employeeId, setEmployeeId] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const [redirectId, setRedirectId] = useState(null);
@@ -18,10 +18,10 @@ const NewTaskContainer = ({ addTask }) => {
     const { name, value } = event.target;
     if (name === 'description') {
       setDescription(value);
-    } else if (name === 'priority') {
+    } else if (name === 'priority_level') {
       setPriority(value);
-    } else if (name === 'isComplete') {
-      setIsComplete(value === 'true');
+    } else if (name === 'completion_status') {
+      setIsComplete(value);
     } else if (name === 'employeeId') {
       setEmployeeId(value);
     }
@@ -37,8 +37,8 @@ const NewTaskContainer = ({ addTask }) => {
 
     const task = {
       description,
-      priority,
-      isComplete,
+      priority_level,
+      completion_status,
       employeeId,
     };
 
