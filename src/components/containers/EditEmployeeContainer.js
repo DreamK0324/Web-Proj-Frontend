@@ -11,7 +11,7 @@
 //         this.state = {
 //           employee_first_name: "", 
 //           employee_last_name: "",
-//           department_name: "",
+//           department_name_name: "",
 //           redirect: false, 
 //           redirectId: null,
 //           error: ""
@@ -25,7 +25,7 @@
 //         this.setState({
 //             employee_first_name: this.props.employee.employee_first_name, 
 //             employee_last_name: this.props.employee.employee_last_name,
-//             department_name: this.props.employee.department_name,
+//             department_name_name: this.props.employee.department_name_name,
 //         });
 //       }
 
@@ -43,8 +43,8 @@
 //           return;
 //         }
 
-//         if (this.state.department_name === "") {
-//           this.setState({error: "Error: department cannot be empty"});
+//         if (this.state.department_name_name === "") {
+//           this.setState({error: "Error: department_name cannot be empty"});
 //           return;
 //         }
 
@@ -53,7 +53,7 @@
 //             id: this.props.employee.id,
 //             employee_first_name: this.state.employee_first_name,
 //             employee_last_name: this.state.employee_last_name,
-//             department_name: this.state.department_name,
+//             department_name_name: this.state.department_name_name,
 //         };
         
 //         this.props.editEmployee(employee);
@@ -91,7 +91,7 @@
 //             <br/>
 
 //             <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
-//             <input type="text" name="department_name" value={this.state.department_name || ''} placeholder={employee.department_name} onChange={(e) => this.handleChange(e)}/>
+//             <input type="text" name="department_name_name" value={this.state.department_name_name || ''} placeholder={employee.department_name_name} onChange={(e) => this.handleChange(e)}/>
 //             <br/>
   
 //             <button type="submit">
@@ -147,9 +147,9 @@ class EditEmployeeContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          firstname: "", 
-          lastname: "",
-          department: "",
+          employee_first_name: "", 
+          employee_last_name: "",
+          department_name: "",
           redirect: false, 
           redirectId: null,
           error: ""
@@ -161,9 +161,9 @@ class EditEmployeeContainer extends Component {
         this.props.fetchEmployee(this.props.match.params.id);
         this.props.fetchTask();
         this.setState({
-            firstname: this.props.employee.firstname, 
-            lastname: this.props.employee.lastname,
-            department: this.props.employee.department,
+            employee_first_name: this.props.employee.employee_first_name, 
+            employee_last_name: this.props.employee.employee_last_name,
+            department_name: this.props.employee.department_name,
         });
       }
 
@@ -176,12 +176,12 @@ class EditEmployeeContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
         //implementing form validation
-        if (this.state.firstname === "" || this.state.lastname=== "") {
+        if (this.state.employee_first_name === "" || this.state.employee_last_name=== "") {
           this.setState({error: "Error: First and Last name cannot be empty"});
           return;
         }
 
-        if (this.state.department === "") {
+        if (this.state.department_name === "") {
           this.setState({error: "Error: department cannot be empty"});
           return;
         }
@@ -189,9 +189,9 @@ class EditEmployeeContainer extends Component {
         //get new info for course from form input
         let employee = {
             id: this.props.employee.id,
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            department: this.state.department,
+            employee_first_name: this.state.employee_first_name,
+            employee_last_name: this.state.employee_last_name,
+            department_name: this.state.department_name,
         };
         
         this.props.editEmployee(employee);
@@ -221,15 +221,15 @@ class EditEmployeeContainer extends Component {
         <div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Firstname: </label>
-            <input type="text" name="firstname" value={this.state.firstname || ''} placeholder={employee.firstname} onChange ={(e) => this.handleChange(e)}/>
+            <input type="text" name="employee_first_name" value={this.state.employee_first_name || ''} placeholder={employee.employee_first_name} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Lastname: </label>
-            <input type="text" name="lastname" value={this.state.lastname || ''} placeholder={employee.lastname} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="employee_last_name" value={this.state.employee_last_name || ''} placeholder={employee.employee_last_name} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
-            <input type="text" name="department" value={this.state.department || ''} placeholder={employee.department} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="department_name" value={this.state.department_name || ''} placeholder={employee.department_name} onChange={(e) => this.handleChange(e)}/>
             <br/>
   
             <button type="submit">
