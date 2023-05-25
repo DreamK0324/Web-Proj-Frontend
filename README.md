@@ -13,7 +13,13 @@
   ```
   
   For Mac User:
-  .......need to add here
+  for mac user(run these in terminal before running the front-end):
+  ```npm cache clean --force
+  npm install axios
+  rm -rf node_modules
+  npm install
+  npm install react-router-dom
+  ```
   
 #Group Member: 
 Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
