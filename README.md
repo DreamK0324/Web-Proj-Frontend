@@ -1,4 +1,4 @@
-final-frontend CSCI 39548 final project
+Final-Frontend CSCI 39548 Final Project
 
 Employee management application
 
