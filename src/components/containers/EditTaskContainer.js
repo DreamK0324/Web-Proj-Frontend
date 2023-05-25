@@ -130,9 +130,11 @@ class EditTaskContainer extends Component {
             {task.employee !== null && <option value="staff">Staff</option>}
           </select> */}
 
-          {/* <button type="submit">
+          <button type="submit">
             Submit
-          </button> */}
+          </button>
+          <br />
+          <br/>
 
         </form>
 
