@@ -1,8 +1,22 @@
-Final-Frontend CSCI 39548 Final Project
+#Final-Frontend CSCI 39548 Final Project
+  Employee management application
 
-Employee management application
-
-Group Member: Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
+#Preparations before compilation
+  For Windows User:
+  1. First:
+  ```bash
+  Remove-Item -Path "node_modules" -Recurse -Force
+  ```
+  2. Then:
+  ```bash
+  npm i
+  ```
+  
+  For Mac User:
+  .......need to add here
+  
+#Group Member: 
+Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
 
 
 Tip: In singleEmployee page, click twice "+" and "-" symbol button if no respond after clicking the button.
