@@ -4,5 +4,8 @@ Employee management application
 
 Group Member: Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
 
-link:htt.
+link:
+
+tip:
+in singleEmployee page, click twice "+" and "-" symbol button if no respond after clicking the button.
 
