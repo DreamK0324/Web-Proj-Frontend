@@ -3,18 +3,16 @@
 
 #Preparations before compilation
   For Windows User:
-  1. First:
-  ```bash
-  Remove-Item -Path "node_modules" -Recurse -Force
+ 
   ```
-  2. Then:
-  ```bash
+  Remove-Item -Path "node_modules" -Recurse -Force
   npm i
   ```
   
   For Mac User:
   for mac user(run these in terminal before running the front-end):
-  ```npm cache clean --force
+  ```
+  npm cache clean --force
   npm install axios
   rm -rf node_modules
   npm install
