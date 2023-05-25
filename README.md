@@ -9,6 +9,10 @@
   Remove-Item -Path "node_modules" -Recurse -Force
   npm i
   ```
+  ```bash
+  npm start
+  ```
+  
   
   For Mac User:
 
@@ -18,6 +22,9 @@
   rm -rf node_modules
   npm install
   npm install react-router-dom
+  ```
+   ```bash
+  npm start
   ```
   
 #Group Member: 
