@@ -82,16 +82,18 @@ class EditEmployeeContainer extends Component {
           
         <div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
+            <br/>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Firstname: </label>
             <input type="text" name="employee_first_name" value={this.state.employee_first_name || ''} placeholder={employee.employee_first_name} onChange ={(e) => this.handleChange(e)}/>
             <br/>
-
+            <br/>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Lastname: </label>
             <input type="text" name="employee_last_name" value={this.state.employee_last_name || ''} placeholder={employee.employee_last_name} onChange={(e) => this.handleChange(e)}/>
             <br/>
-
+            <br/>
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
             <input type="text" name="department_name" value={this.state.department_name || ''} placeholder={employee.department_name} onChange={(e) => this.handleChange(e)}/>
+            <br/>
             <br/>
   
             <button type="submit">

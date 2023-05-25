@@ -14,8 +14,9 @@ const TaskView = (props) => {
       )}
 
       <div>
-        completion_status : {task.completion_status ? 'Complete' : 'Incomplete'}
+        Status: {task.completion_status ? 'Complete' : 'Incomplete'}
       </div>
+      <br/>
       <br/>
       <Link to={`/edittask/${task.id}`}>Edit task information</Link>
       <br/>
