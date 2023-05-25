@@ -2,6 +2,7 @@
   Employee management application
 
 #Preparations before compilation
+
   For Windows User:
  
   ```
@@ -10,7 +11,7 @@
   ```
   
   For Mac User:
-  for mac user(run these in terminal before running the front-end):
+
   ```
   npm cache clean --force
   npm install axios
