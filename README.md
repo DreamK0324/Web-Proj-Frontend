@@ -1,7 +1,7 @@
 #Final-Frontend CSCI 39548 Final Project
   Employee management application
 
-#Preparations before compilation
+#Preparations before compilation for terminal
 
   For Windows User:
  
