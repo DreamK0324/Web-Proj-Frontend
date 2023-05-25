@@ -4,7 +4,7 @@
 #Group Member: 
 Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
 
-#Preparations for terminal before compilation
+#Preparations for terminal
 
   For Windows User:
  
