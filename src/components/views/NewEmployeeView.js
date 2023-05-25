@@ -8,7 +8,7 @@ const NewEmployeeView = (props) => {
     <div className="root">
       <div className="formContainer">
         <div className="formFirstname">
-          <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+          <h2 style={{fontWeight: 'bold', fontFamily: '', fontSize: '20px', color: '#11153e'}}>
             New Employee
           </h2>
         </div>
