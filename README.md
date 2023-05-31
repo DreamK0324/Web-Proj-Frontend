@@ -6,7 +6,7 @@ Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun
 
 #Preparations for terminal
 
-  For Windows User: 
+  For Windows User:
  
   ```
   Remove-Item -Path "node_modules" -Recurse -Force
