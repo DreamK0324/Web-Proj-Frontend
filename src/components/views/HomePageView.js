@@ -8,8 +8,7 @@ const HomePageView = () => {
       <h1 style={{ textAlign: 'center', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
         Welcome to the HomePage
       </h1>
-      <p>Zongming Ke, Chengen Wei, Xuanrong Hong, Guangyang Sun</p>
-      <br/>
+    
       <br/>
       <div style={{ marginBottom: '10px' }}>
         <Link to="/employees">All Employees</Link>
